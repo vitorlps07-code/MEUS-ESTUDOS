@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>study with vt | Se divirta</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" data-screen="welcome">
+      <span>✦</span> vtzada
+    </a>
+    <span class="status">● SISTEMA ONLINE</span>
+  </header>
+
+  <main class="container">
+
+    <!-- TELA 1: BOAS-VINDAS -->
+    <section id="welcome" class="screen welcome-screen active">
+      <div class="welcome-content">
+        <span class="tag">ARROCHA NO SEU FUTURO</span>
+
+        <h1>
+          Seja bem-vindo(a)<br>
+          à sua <span class="gradient-text">área de estudos!</span>
+        </h1>
+
+        <p>
+          Organize sua rotina, acompanhe seu progresso
+          e transforme seus objetivos meu parceiroooo.
+        </p>
+
+        <button class="primary-btn" data-screen="home">
+          Vamos começar <span>→</span>
+        </button>
+      </div>
+
+      <div class="orb" aria-hidden="true">
+        <div class="orb-core">✦</div>
+        <span class="orbit orbit-one">✧</span>
+        <span class="orbit orbit-two">⌘</span>
+        <span class="orbit orbit-three">⌁</span>
+      </div>
+    </section>
+
+    <!-- TELA 2: MENU PRINCIPAL -->
+    <section id="home" class="screen">
+      <div class="page-heading">
+        <span class="tag">PAINEL PRINCIPAL</span>
+        <h1>O que vamos estudar hoje?</h1>
+        <p>Escolha uma área para continuar sua jornada.</p>
+      </div>
+
+      <div class="menu-grid">
+        <button class="menu-card purple" data-screen="tasks">
+          <span class="card-icon">✓</span>
+          <span class="card-title">Tarefas</span>
+          <span class="card-description">Organize seus trabalhos e atividades.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="menu-card blue" data-screen="schedule">
+          <span class="card-icon">▦</span>
+          <span class="card-title">Cronograma</span>
+          <span class="card-description">Planeje seus horários de estudo.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="menu-card green" data-screen="progress">
+          <span class="card-icon">↗</span>
+          <span class="card-title">Progresso</span>
+          <span class="card-description">Veja quanto você já concluiu.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="menu-card orange" data-screen="timer">
+          <span class="card-icon">◷</span>
+          <span class="card-title">Temporizador</span>
+          <span class="card-description">Reserve um tempo para se concentrar.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="menu-card pink" data-screen="notes">
+          <span class="card-icon">≡</span>
+          <span class="card-title">Anotações</span>
+          <span class="card-description">Guarde seus resumos e suas ideias.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="menu-card cyan" data-screen="reminders">
+          <span class="card-icon">♧</span>
+          <span class="card-title">Lembretes</span>
+          <span class="card-description">Não esqueça provas e entregas.</span>
+          <span class="card-arrow">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- TELA 3: TAREFAS -->
+    <section id="tasks" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">ORGANIZAÇÃO</span>
+        <h1>Minhas tarefas</h1>
+        <p>Um passo de cada vez. Organize o que precisa fazer.</p>
+      </div>
+
+      <div class="panel">
+        <form id="taskForm" class="entry-form">
+          <input id="taskInput" placeholder="Digite uma tarefa..." required>
+          <button class="primary-btn">+ Adicionar</button>
+        </form>
+        <div id="taskList" class="item-list"></div>
+      </div>
+    </section>
+
+    <!-- TELA 4: CRONOGRAMA -->
+    <section id="schedule" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">PLANEJAMENTO</span>
+        <h1>Meu cronograma</h1>
+        <p>Defina a matéria, o dia e o horário.</p>
+      </div>
+
+      <div class="panel">
+        <form id="scheduleForm" class="entry-form">
+          <input id="subjectInput" placeholder="Matéria ou atividade" required>
+
+          <select id="dayInput">
+            <option>Segunda-feira</option>
+            <option>Terça-feira</option>
+            <option>Quarta-feira</option>
+            <option>Quinta-feira</option>
+            <option>Sexta-feira</option>
+            <option>Sábado</option>
+            <option>Domingo</option>
+          </select>
+
+          <input id="timeInput" type="time" required>
+          <button class="primary-btn">+ Adicionar</button>
+        </form>
+        <div id="scheduleList" class="item-list"></div>
+      </div>
+    </section>
+
+    <!-- TELA 5: PROGRESSO -->
+    <section id="progress" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">SUA EVOLUÇÃO</span>
+        <h1>Meu progresso</h1>
+        <p>Veja suas tarefas concluídas e continue avançando.</p>
+      </div>
+
+      <div class="panel progress-panel">
+        <div id="progressRing" class="progress-ring">
+          <div>
+            <strong id="progressPercent">0%</strong>
+            <span>concluído</span>
+          </div>
+        </div>
+        <h2 id="progressSummary">Você está começando!</h2>
+        <p id="progressDetail">Suas tarefas concluídas aparecerão aqui.</p>
+        <button class="secondary-btn" data-screen="tasks">
+          Ver minhas tarefas →
+        </button>
+      </div>
+    </section>
+
+    <!-- TELA 6: TEMPORIZADOR -->
+    <section id="timer" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">MODO FOCO</span>
+        <h1>Hora de estudar</h1>
+        <p>Escolha seu tempo e concentre-se em uma coisa de cada vez.</p>
+      </div>
+
+      <div class="panel timer-panel">
+        <div class="timer-options">
+          <button class="secondary-btn" data-minutes="25">25 minutos</button>
+          <button class="secondary-btn" data-minutes="50">50 minutos</button>
+        </div>
+        <div id="timerDisplay" class="timer-display">25:00</div>
+        <p id="timerStatus">Pronto para começar?</p>
+        <div class="timer-actions">
+          <button id="startTimer" class="primary-btn">▶ Iniciar</button>
+          <button id="resetTimer" class="secondary-btn">↻ Reiniciar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 7: ANOTAÇÕES -->
+    <section id="notes" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">SEU CADERNO DIGITAL</span>
+        <h1>Minhas anotações</h1>
+        <p>Registre o que aprendeu e consulte depois.</p>
+      </div>
+
+      <div class="panel">
+        <form id="noteForm" class="entry-form vertical-form">
+          <input id="noteTitle" placeholder="Título da anotação" required>
+          <textarea id="noteContent" placeholder="Escreva sua anotação..." required></textarea>
+          <button class="primary-btn">Salvar anotação</button>
+        </form>
+        <div id="noteList" class="item-list"></div>
+      </div>
+    </section>
+
+    <!-- TELA 8: LEMBRETES -->
+    <section id="reminders" class="screen">
+      <button class="back-btn" data-screen="home">← Voltar ao menu</button>
+      <div class="page-heading">
+        <span class="tag">FIQUE ATENTO</span>
+        <h1>Meus lembretes</h1>
+        <p>Organize as datas das provas, atividades e entregas.</p>
+      </div>
+
+      <div class="panel">
+        <form id="reminderForm" class="entry-form">
+          <input id="reminderInput" placeholder="Nome da prova ou entrega" required>
+          <input id="reminderDate" type="date" required>
+          <button class="primary-btn">+ Criar lembrete</button>
+        </form>
+        <div id="reminderList" class="item-list"></div>
+      </div>
+    </section>
+
+    <footer>VTZADA // SEU FUTURO COMERÇA AQUI COM A GENTE</footer>
+  </main>
+</body>
+</html>
